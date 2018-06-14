@@ -316,6 +316,10 @@ module Mongoid
       base_class.where(:parent_ids => self.id)
     end
 
+    def unscoped_descendants
+      base_class.unscoped.where(:parent_ids => self.id)
+    end
+
     ##
     # Returns and array of this document and it's descendants
     #
